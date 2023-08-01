@@ -15,28 +15,35 @@
                     <div>
                         <h6 class="footer_menu-title">Menu</h6>
                         <ul class="footer_menu">
-                            <li class="footer_menu-item" id="home-footer">
-                                <a>Home</a>
-                            </li>
-                            <li class="footer_menu-item" id="home-footer">
-                                <a href="#about">About</a>
-                            </li>
-                            <li class="footer_menu-item" id="home-footer">
-                                <a href="#features">Features</a>
-                            </li>
+                            <?php if ($data['url'] == 'home') : ?>
+                                <li class="footer_menu-item" id="home-footer">
+                                    <a>Home</a>
+                                </li>
+                            <?php else : ?>
+                                <li class="footer_menu-item">
+                                    <a href="<?= PATH ?>/">Home</a>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if ($data['url'] == 'home') : ?>
+                                <li class="footer_menu-item" id="about-footer">
+                                    <a href="#about">About</a>
+                                </li>
+                                <li class="footer_menu-item" id="features-footer">
+                                    <a href="#features">Features</a>
+                                </li>
+                            <?php endif; ?>
+
                         </ul>
                     </div>
                     <div>
                         <h6 class="footer_menu-title">Join Us</h6>
                         <ul class="footer_menu">
-                            <li class="footer_menu-item" id="home-footer">
-                                <a>Home</a>
+                            <li class="footer_menu-item">
+                                <a href="<?= PATH ?>/signin">Sign in</a>
                             </li>
-                            <li class="footer_menu-item" id="home-footer">
-                                <a href="#about">About</a>
-                            </li>
-                            <li class="footer_menu-item" id="home-footer">
-                                <a href="#features">Features</a>
+                            <li class="footer_menu-item">
+                                <a href="<?= PATH ?>/signup">Sign up</a>
                             </li>
                         </ul>
                     </div>

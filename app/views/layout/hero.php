@@ -8,8 +8,8 @@
         <p class="hero_content-description">
             Organize your tasks using the todo list app
         </p>
-        <button class="btn btn-danger py-3 px-4">
+        <a href="<?= PATH ?>/signup" class="btn btn-danger py-3 px-4">
             Start for free
-        </button>
+        </a>
     </div>
 </div>

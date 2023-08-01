@@ -1,4 +1,4 @@
-.signin_wrapper {
+.sinup_wrapper {
   height: 100vh;
   padding: 5%;
   display: flex;
@@ -7,17 +7,17 @@
   align-items: center;
 }
 
-.signin_icon {
+.sinup_icon {
   width: 60px;
   height: 60px;
 }
 
-.signin_title {
+.sinup_title {
   font-size: 2rem;
   font-weight: 600;
 }
 
-.signin_wrapper .card {
+.sinup_wrapper .card {
   width: 30%;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;

@@ -23,7 +23,7 @@
                     <a href="<?= PATH ?>/signin" class="nav-link">Sign In</a>
                 </li>
                 <li class="nav-item text-white fw-semibold">
-                    <a href="" class="btn btn-danger">
+                    <a href="<?= PATH ?>/signup" class="btn btn-danger">
                         <?php if ($data['url'] == 'home') : ?>
                             Start for free
                         <?php else : ?>
