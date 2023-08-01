@@ -2,26 +2,37 @@ $(document).ready(function () {
   let navbar = $(".navbar-wrapper");
   let navbarTitle = $(".navbar_todo-title");
   let navbarItem = $(".nav-item");
+  let navbarSperator = $(".navbar_sperator");
+
+  // get current path
+  let path = window.location.pathname;
+  console.log(path);
 
   const handleScrollNavbar = () => {
     if (window.pageYOffset > 100) {
-      navbar.removeClass("bg-transparent");
-      navbar.addClass("bg-white");
+      if (path === "/todo_list/") {
+        navbar.removeClass("bg-transparent");
+        navbar.addClass("bg-white");
+        navbarTitle.removeClass("text-white");
+        navbarTitle.addClass("text-dark");
 
-      navbarTitle.removeClass("text-white");
-      navbarTitle.addClass("text-dark");
+        navbarItem.removeClass("text-white");
+        navbarItem.addClass("text-dark");
 
-      navbarItem.removeClass("text-white");
-      navbarItem.addClass("text-dark");
+        navbarSperator.addClass("navbar_sperator-black");
+      }
     } else {
-      navbar.removeClass("bg-white");
-      navbar.addClass("bg-transparent");
+      if (path === "/todo_list/") {
+        navbar.removeClass("bg-white");
+        navbar.addClass("bg-transparent");
+        navbarTitle.removeClass("text-dark");
+        navbarTitle.addClass("text-white");
 
-      navbarTitle.removeClass("text-dark");
-      navbarTitle.addClass("text-white");
+        navbarItem.removeClass("text-dark");
+        navbarItem.addClass("text-white");
 
-      navbarItem.removeClass("text-dark");
-      navbarItem.addClass("text-white");
+        navbarSperator.removeClass("navbar_sperator-black");
+      }
     }
   };
 

@@ -28,6 +28,11 @@
   height: 30px;
 }
 
+.navbar_sperator-black {
+  border-left: 1px solid #000 !important;
+  height: 30px;
+}
+
 .movile_view {
   display: block;
 }

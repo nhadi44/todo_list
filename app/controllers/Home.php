@@ -6,17 +6,12 @@ class Home extends Controller
     {
         $data['title'] = 'Todo List App';
         $data['url'] = $_REQUEST['url'] ?? 'home';
-
-        $data['test'] = [
-            'name' => 'Rizky',
-            'age' => 20,
-            'address' => 'Indonesia'
-        ];
+        $data['year'] = date('Y');
 
         $this->view('layout/header', $data);
         $this->view('layout/navbar', $data);
         $this->view('layout/hero');
-        $this->view('home/home', $data);
-        $this->view('layout/footer');
+        $this->view('home/home');
+        $this->view('layout/footer', $data);
     }
 }

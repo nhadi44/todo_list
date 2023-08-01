@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?= BASEURL ?>/css/custom/hero.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/custom/home.css">
     <link rel="stylesheet" href="<?= BASEURL ?>/css/custom/navbar.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/custom/footer.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/custom/signin.css">
 
     <script src="<?= BASEURL ?>/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
