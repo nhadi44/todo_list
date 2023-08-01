@@ -10,7 +10,9 @@
                 </div>
                 <p class="footer_description">Join Millions of people who organize work and life with Todo List.</p>
             </div>
-            <div class="footer_right-content col-md-3 col-sm-12 justify-content-end">
+
+            <!-- create condition if url taks/* then add class d-none -->
+            <div class="<?php echo $data['class'] ?>">
                 <div class="footer_wrapper-menu">
                     <div>
                         <h6 class="footer_menu-title">Menu</h6>
@@ -63,6 +65,9 @@
 
 <script src="<?= BASEURL ?>/js/custom/navbar.js"></script>
 <script src="<?= BASEURL ?>/js/custom/footer.js"></script>
+<script src="<?= BASEURL ?>/js/custom/tooltip.js"></script>
+<script src="<?= BASEURL ?>/js/custom/modal.js"></script>
+<script src="<?= BASEURL ?>/js/custom/dashboard/get-data.js"></script>
 
 </body>
 

@@ -6,7 +6,6 @@ $(document).ready(function () {
 
   // get current path
   let path = window.location.pathname;
-  console.log(path);
 
   const handleScrollNavbar = () => {
     if (window.pageYOffset > 100) {
