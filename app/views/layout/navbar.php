@@ -7,16 +7,22 @@
             </a>
         </div>
         <ul class="navbar-nav d-flex align-items-center flex-row gap-4">
-            <li class="nav-item text-white fw-semibold" id="homeLink">
+            <li class="nav-item text-white fw-semibold mobile_view" id="homeLink">
                 <a class="nav-link">Home</a>
             </li>
-            <li class="nav-item text-white fw-semibold">
+            <li class="nav-item text-white fw-semibold mobile_view">
                 <a href="#about" class="nav-link">About</a>
             </li>
-            <li class="nav-item text-white fw-semibold">
+            <li class="nav-item text-white fw-semibold mobile_view">
                 <a href="#features" class="nav-link">Features</a>
             </li>
-            <li class="nav-item navbar_sperator"></li>
+            <li class="nav-item navbar_sperator mobile_view"></li>
+            <li class="nav-item text-white fw-semibold">
+                <a href="" class="nav-link">Sign In</a>
+            </li>
+            <li class="nav-item text-white fw-semibold">
+                <a href="" class="btn btn-danger">Start for free</a>
+            </li>
         </ul>
     </div>
 </nav>
