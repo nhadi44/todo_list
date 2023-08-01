@@ -1,0 +1,29 @@
+.navbar-wrapper {
+  z-index: 40;
+  width: 100%;
+  padding: 2rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar_todo-icon {
+  width: 12%;
+}
+
+.navbar_todo-title {
+  font-size: 20px;
+}
+
+.navbar-nav .nav-item:hover {
+  cursor: pointer;
+  color: #ffc107 !important;
+  transition: all 0.1s ease;
+}
+
+.active {
+  color: #ffc107 !important;
+}
+
+.navbar_sperator {
+  border-left: 1px solid #fff;
+  height: 30px;
+}
