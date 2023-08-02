@@ -4,6 +4,13 @@ class Home extends Controller
 {
     public function index()
     {
+        session_start();
+
+        if (isset($_SESSION['user'])) {
+            header('Location: ' . PATH . '/dashboard');
+            exit;
+        }
+
         $data['title'] = 'Todo List App';
         $data['url'] = $_REQUEST['url'] ?? 'home';
         $data['year'] = date('Y');

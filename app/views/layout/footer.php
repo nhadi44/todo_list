@@ -67,7 +67,11 @@
 <script src="<?= BASEURL ?>/js/custom/footer.js"></script>
 <script src="<?= BASEURL ?>/js/custom/tooltip.js"></script>
 <script src="<?= BASEURL ?>/js/custom/modal.js"></script>
-<script src="<?= BASEURL ?>/js/custom/dashboard/get-data.js"></script>
+<script src="<?= BASEURL ?>/js/custom/dashboard/get-activity-id.js"></script>
+<script src="<?= BASEURL ?>/js/custom/dashboard/delete-activity-id.js"></script>
+<script src="<?= BASEURL ?>/js/custom/dashboard/create-activity.js"></script>
+<script src="<?= BASEURL ?>/js/custom/signup/signup.js"></script>
+<script src="<?= BASEURL ?>/js/custom/signin/signin.js"></script>
 
 </body>
 

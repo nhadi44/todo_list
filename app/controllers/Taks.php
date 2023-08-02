@@ -2,7 +2,7 @@
 
 class Taks extends Controller
 {
-    public function index()
+    public function index($id)
     {
         $data['title'] = 'Todo List App - Taks';
         $data['url'] = $_REQUEST['url'] ?? 'dashboad/taks';
@@ -16,7 +16,8 @@ class Taks extends Controller
             $data['class'] = 'footer_right-content col-md-3 col-sm-12 justify-content-end';
         }
 
-        $data['year'] = date('Y');
+        $data['taks'] = $this->getAllTaks($id);
+        $data['activityName'] = $this->model('TaksModel')->getActivityName($id);
 
         $this->view('layout/header', $data);
         $this->view('layout/dashboard/navbar', $data);
@@ -24,5 +25,11 @@ class Taks extends Controller
         $this->view('dashboard/createTaks');
         $this->view('dashboard/updateTaks');
         $this->view('layout/footer', $data);
+    }
+
+    public function getAllTaks($id)
+    {
+        $data['taks'] = $this->model('TaksModel')->getAllTaks($id);
+        return $data['taks'];
     }
 }

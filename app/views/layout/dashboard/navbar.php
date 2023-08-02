@@ -8,11 +8,15 @@
             <ul class="navbar-nav text-white">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        hadinurhidayat97@tmail.com
+                        <?php if (isset($_SESSION['user'])) : ?>
+                            <?= $_SESSION['user']['email'] ?>
+                        <?php else : ?>
+                            User
+                        <?php endif; ?>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Change Password</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="<?= PATH ?>/signin/logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>

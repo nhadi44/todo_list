@@ -23,3 +23,9 @@
   border-radius: 1rem;
   padding: 1.3%;
 }
+
+@media only screen and (max-width:768px) {
+  .signin_wrapper .card {
+    width: 80%;
+  }
+}

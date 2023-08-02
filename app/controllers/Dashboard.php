@@ -4,42 +4,80 @@ class Dashboard extends Controller
 {
     public function index()
     {
-        // // check if user not login then redirect to login page
-        // if (!isset($_SESSION['user'])) {
-        //     header('Location: ' . PATH . '/signin');
-        //     exit;
-        // }
+        session_start();
+        // check if user not login then redirect to login page
+        if (!isset($_SESSION['user'])) {
+            header('Location: ' . PATH . '/signin');
+            exit;
+        }
 
         $data['title'] = 'Todo List App - Dashboard';
         $data['url'] = $_REQUEST['url'] ?? 'dashboard';
         $data['year'] = date('Y');
-        $path = $_SERVER['REQUEST_URI'];
+        $data['year'] = date('Y');
+        $data['user'] = $_SESSION['user'];
 
+        $data['activity'] = $this->model('Activity')->getActivityByUser($data['user']['id']);
+
+        $path = $_SERVER['REQUEST_URI'];
         if (strpos($path, 'taks') !== false || strpos($path, 'dashboard') !== false) {
             $data['class'] = 'd-none';
         } else {
             $data['class'] = 'footer_right-content col-md-3 col-sm-12 justify-content-end';
         }
-        $data['year'] = date('Y');
+
 
         $this->view('layout/header', $data);
         $this->view('layout/dashboard/navbar', $data);
         $this->view('dashboard/index', $data);
         $this->view('dashboard/createActivity');
         $this->view('dashboard/updateActivity');
+        $this->view('dashboard/deleteActivity');
         $this->view('layout/footer', $data);
     }
 
-    public function getData()
+    public function getActivityById($id)
     {
-        //    get all request from ajax 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $data = [
-                'activity_name' => $_POST['activity_name'],
-                'activity_description' => $_POST['activity_description']
-            ];
+        // create rules for method must be POST
+        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            echo json_encode(['error' => 'Method not allowed']);
         }
 
-        echo json_encode($data);
+        try {
+            //code...
+            $data['activity'] = $this->model('Activity')->getActivityId($id);
+            echo json_encode($data['activity']);
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo json_encode(['error' => $th->getMessage()]);
+        }
+    }
+
+    public function createActivity()
+    {
+        session_start();
+        // create rules for method must be POST
+        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            echo json_encode(['error' => 'Method not allowed']);
+            http_response_code(405);
+            exit;
+        }
+
+        $data = [
+            'name' => $_POST['activity'],
+            'description' => $_POST['description'],
+            'user_id' => $_SESSION['user']['id'],
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+
+        try {
+            //code...
+            $this->model('Activity')->createActivityUser($data);
+            echo json_encode(['success' => 'Activity has been created']);
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo json_encode(['error' => $th->getMessage()]);
+        }
     }
 }

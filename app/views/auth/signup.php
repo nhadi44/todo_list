@@ -5,16 +5,16 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="">
+            <form id="signupForm">
                 <div class="form-group mb-4">
                     <label for="email" class="form-label">Your email</label>
                     <input type="email" class="form-control py-2" name="email" id="email" placeholder="Enter your email...">
                 </div>
                 <div class="form-group mb-4">
                     <label for="email" class="form-label">Your password</label>
-                    <input type="email" class="form-control py-2" name="email" id="password" placeholder="Enter your password...">
+                    <input type="password" class="form-control py-2" name="email" id="password" placeholder="Enter your password...">
                 </div>
-                <button type="submit" class="btn btn-primary w-100 py-2 mb-4">Sign In</button>
+                <button type="submit" class="btn btn-primary w-100 py-2 mb-4" id="btnSignUp">Sign Up</button>
                 <a href="<?= PATH ?>/signin" class="text-decoration-none">
                     Already have an account?
                 </a>

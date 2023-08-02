@@ -6,13 +6,14 @@
             </div>
             <form>
                 <div class="modal-body">
+                    <input type="hidden" name="updateActivityId" id="updateActivityId">
                     <div class="form-group mb-3">
                         <label for="activity" class="form-label">Activity</label>
                         <input type="text" class="form-control" name="activity" id="updateActivityInput" placeholder="Your activity...">
                     </div>
                     <div class="form-group mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea name="activity" id="activity" cols="30" rows="4" class="form-control"></textarea>
+                        <textarea name="updateActivityDescription" id="updateActivityDescription" cols="30" rows="4" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
