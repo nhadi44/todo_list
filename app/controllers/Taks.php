@@ -39,6 +39,7 @@ class Taks extends Controller
         $this->view('dashboard/createTaks', $data);
         $this->view('dashboard/updateTaks');
         $this->view('dashboard/deleteTaks');
+        $this->view('dashboard/finishedTaks');
         $this->view('layout/footer', $data);
     }
 
@@ -85,6 +86,7 @@ class Taks extends Controller
             'activity_id' => $_POST['activityId'],
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
+            'is_finished' => '0'
         ];
 
         try {
@@ -114,6 +116,7 @@ class Taks extends Controller
             'description' => $_POST['description'],
             'priority' => $_POST['priority'],
             'updated_at' => date('Y-m-d H:i:s'),
+            'is_finished' => '0'
         ];
 
         try {
@@ -121,6 +124,58 @@ class Taks extends Controller
             $this->model('TaksModel')->updateTaks($data);
             http_response_code(200);
             echo json_encode(['success' => 'Taks has been updated']);
+            exit;
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo json_encode(['error' => $th->getMessage()]);
+        }
+    }
+
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            echo json_encode(['error' => 'Method not allowed']);
+            http_response_code(405);
+            exit;
+        }
+
+        $data = [
+            'id' => $_POST['id'],
+            'activity_id' => $_POST['activityId'],
+        ];
+
+        try {
+            //code...
+            $this->model('TaksModel')->deleteTaks($data);
+            http_response_code(200);
+            echo json_encode(['success' => 'Taks has been deleted']);
+            exit;
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo json_encode(['error' => $th->getMessage()]);
+        }
+    }
+
+    public function finishTask()
+    {
+        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            echo json_encode(['error' => 'Method not allowed']);
+            http_response_code(405);
+            exit;
+        }
+
+        $data = [
+            'id' => $_POST['id'],
+            'activity_id' => $_POST['activity_id'],
+            'is_finished' => 1,
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+
+        try {
+            //code...
+            $this->model('TaksModel')->finishTask($data);
+            http_response_code(200);
+            echo json_encode(['success' => 'Taks has been finished']);
             exit;
         } catch (\Throwable $th) {
             //throw $th;

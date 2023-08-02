@@ -20,11 +20,17 @@
                                         <?= $taks['description'] ?>
                                     </p>
                                     <div class="d-flex justify-content-end gap-2">
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateTaks" data-id="<?= $taks['id'] ?>">Edit</button>
+                                        <?php if ($taks['is_finished'] == 1) : ?>
+                                            <button class="btn btn-success" type="button" id="finishedTaksBtn" data-bs-toggle="modal" data-bs-target="#finishedTaks" data-id="<?= $taks['id'] ?>">Finished</button>
+                                        <?php else : ?>
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateTaks" data-id="<?= $taks['id'] ?>">
+                                                Edit
+                                            </button>
 
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTaks" data-id="<?= $taks['id'] ?>">Delete</button>
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTaks" data-id="<?= $taks['id'] ?>">Delete</button>
 
-                                        <button class="btn btn-success">Finish</button>
+                                            <button class="btn btn-success" type="button" id="finishedTaksBtn" data-bs-toggle="modal" data-bs-target="#finishedTaks" data-id="<?= $taks['id'] ?>">Finish</button>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </form>

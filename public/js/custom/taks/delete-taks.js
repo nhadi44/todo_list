@@ -27,3 +27,40 @@ $(deleteTaksBtn).on("click", function () {
     },
   });
 });
+
+$(deleteTaksForm).on("submit", function (e) {
+  e.preventDefault();
+  let id = $(this).find("#deleteTaksId").val();
+  let activityId = $(this).find("#deleteTaksActivityId").val();
+
+  let data = {
+    id: id,
+    activityId: activityId,
+  };
+
+  $.ajax({
+    url: `http://localhost/todo_list/taks/delete`,
+    method: "POST",
+    data: data,
+    dataType: "json",
+    success: function (response) {
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Taks deleted successfully!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $(deleteTaksModal).modal("hide");
+          location.reload();
+        }
+      });
+    },
+    error: function (response) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    },
+  });
+});

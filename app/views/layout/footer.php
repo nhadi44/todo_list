@@ -76,6 +76,7 @@
 <script src="<?= BASEURL ?>/js/custom/taks/create-taks.js"></script>
 <script src="<?= BASEURL ?>/js/custom/taks/update-taks.js"></script>
 <script src="<?= BASEURL ?>/js/custom/taks/delete-taks.js"></script>
+<script src="<?= BASEURL ?>/js/custom/taks/finish-taks.js"></script>
 
 
 <script src="<?= BASEURL ?>/js/custom/signup/signup.js"></script>

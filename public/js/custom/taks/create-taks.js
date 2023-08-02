@@ -36,6 +36,7 @@ createFormTaks.on("submit", function (e) {
       $(createTaksBtn).html("Taks is creating...");
     },
     success: function (response) {
+      console.log("success", response);
       Swal.fire({
         icon: "success",
         title: "Success!",
@@ -49,6 +50,7 @@ createFormTaks.on("submit", function (e) {
       });
     },
     error: function (response) {
+      console.log("error", response);
       Swal.fire({
         icon: "error",
         title: "Oops...",
