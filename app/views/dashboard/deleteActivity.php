@@ -4,7 +4,7 @@
             <div class="modal-header bg-danger">
                 <h1 class="modal-title fs-5 text-white" id="deleteActivityLabel">Delete Activity</h1>
             </div>
-            <form>
+            <form id="formDeleteActivity">
                 <div class="modal-body">
                     <input type="hidden" name="deleteActivityId" id="deleteActivityId">
                     <p>
@@ -13,7 +13,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-danger" id="deleteActivityButton">Delete</button>
                 </div>
             </form>
         </div>

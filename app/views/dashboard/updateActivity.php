@@ -4,7 +4,7 @@
             <div class="modal-header bg-warning">
                 <h1 class="modal-title fs-5 text-dark" id="updateActivityLabel">Update Activity</h1>
             </div>
-            <form>
+            <form id="updateActivityForm">
                 <div class="modal-body">
                     <input type="hidden" name="updateActivityId" id="updateActivityId">
                     <div class="form-group mb-3">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning">Save</button>
+                    <button type="submit" class="btn btn-warning" id="btnUpdateActivity">Save</button>
                 </div>
             </form>
         </div>

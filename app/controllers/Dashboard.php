@@ -80,4 +80,56 @@ class Dashboard extends Controller
             echo json_encode(['error' => $th->getMessage()]);
         }
     }
+
+    public function updateActivity()
+    {
+        session_start();
+        // create rules for method must be POST
+        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            echo json_encode(['error' => 'Method not allowed']);
+            http_response_code(405);
+            exit;
+        }
+
+        $data = [
+            'id' => $_POST['id'],
+            'name' => $_POST['activity'],
+            'description' => $_POST['description'],
+            'user_id' => $_SESSION['user']['id'],
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+
+        try {
+            //code...
+            $this->model('Activity')->updateActivityUser($data);
+            echo json_encode(['success' => 'Activity has been updated']);
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo json_encode(['error' => $th->getMessage()]);
+        }
+    }
+
+    public function deleteActivity()
+    {
+        session_start();
+
+        // create rules for method must be POST
+        if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            echo json_encode(['error' => 'Method not allowed']);
+            http_response_code(405);
+            exit;
+        }
+
+        $data = [
+            'id' => $_POST['id'],
+            'user_id' => $_SESSION['user']['id'],
+        ];
+
+        try {
+            $this->model('Activity')->deleteActivityUser($data);
+            echo json_encode(['success' => 'Activity has been deleted']);
+        } catch (\Throwable $th) {
+            echo json_encode(['error' => $th->getMessage()]);
+        }
+    }
 }

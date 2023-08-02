@@ -67,9 +67,17 @@
 <script src="<?= BASEURL ?>/js/custom/footer.js"></script>
 <script src="<?= BASEURL ?>/js/custom/tooltip.js"></script>
 <script src="<?= BASEURL ?>/js/custom/modal.js"></script>
+
 <script src="<?= BASEURL ?>/js/custom/dashboard/get-activity-id.js"></script>
 <script src="<?= BASEURL ?>/js/custom/dashboard/delete-activity-id.js"></script>
 <script src="<?= BASEURL ?>/js/custom/dashboard/create-activity.js"></script>
+<script src="<?= BASEURL ?>/js/custom/dashboard/update-activity.js"></script>
+
+<script src="<?= BASEURL ?>/js/custom/taks/create-taks.js"></script>
+<script src="<?= BASEURL ?>/js/custom/taks/update-taks.js"></script>
+<script src="<?= BASEURL ?>/js/custom/taks/delete-taks.js"></script>
+
+
 <script src="<?= BASEURL ?>/js/custom/signup/signup.js"></script>
 <script src="<?= BASEURL ?>/js/custom/signin/signin.js"></script>
 

@@ -1,5 +1,6 @@
 let modal = $("#createActivity");
 let formCreateActivity = $(modal).find("#createActivityForm");
+let btnCreateActivity = $(formCreateActivity).find("#btnCreateActivity");
 
 // modal close clear form
 $(modal).on("hidden.bs.modal", function () {
@@ -31,13 +32,33 @@ $(formCreateActivity).submit(function (e) {
     type: "POST",
     data: data,
     dataType: "json",
-    beforeSend: function () {},
+    beforeSend: function () {
+      $(btnCreateActivity).attr("disabled", true);
+      $(btnCreateActivity).html("Activity creating");
+    },
     success: function (response) {
-      console.log("success", response);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Activity created successfully!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $(modal).modal("hide");
+          $(formCreateActivity).trigger("reset");
+          window.location.reload();
+        }
+      });
     },
     error: function (response) {
-      console.log("error", response);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     },
-    complete: function () {},
+    complete: function () {
+      $(btnCreateActivity).attr("disabled", false);
+      $(btnCreateActivity).html("Save");
+    },
   });
 });

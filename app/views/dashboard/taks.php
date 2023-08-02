@@ -20,9 +20,11 @@
                                         <?= $taks['description'] ?>
                                     </p>
                                     <div class="d-flex justify-content-end gap-2">
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateTaks">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                        <button class="btn btn-success">Finished</button>
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateTaks" data-id="<?= $taks['id'] ?>">Edit</button>
+
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTaks" data-id="<?= $taks['id'] ?>">Delete</button>
+
+                                        <button class="btn btn-success">Finish</button>
                                     </div>
                                 </div>
                             </form>
