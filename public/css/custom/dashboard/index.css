@@ -1,5 +1,10 @@
 .dashboard_wrapper,
 .taks_wrapper {
-  height: 100vh;
+  /* height: 100vh; */
   padding: 8rem 0;
+}
+
+.dashboard_wrapper .text-muted,
+.taks_wrapper .text-muted {
+  font-size: 0.7rem !important;
 }

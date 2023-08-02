@@ -19,7 +19,7 @@ class Activity
 
     public function getActivityByUser($id)
     {
-        $this->db->query("SELECT id, name, description, user_id, created_at FROM " . $this->table . " WHERE user_id=:id ORDER BY created_at DESC");
+        $this->db->query("SELECT id, name, description, user_id, created_at, update_at FROM " . $this->table . " WHERE user_id=:id ORDER BY created_at DESC");
         $this->db->bind('id', $id);
         return $this->db->resultSet();
     }

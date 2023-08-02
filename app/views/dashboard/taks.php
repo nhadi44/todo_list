@@ -7,21 +7,47 @@
             <h1 class="fw-bold fs-1"><?= $data['activityName']['name'] ?></h1>
         </div>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createTaks">Create new taks</button>
-
         <div class="row mt-4">
             <?php if ($data['taks']) : ?>
                 <?php foreach ($data['taks'] as $taks) : ?>
-                    <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4">
                         <div class="card">
                             <h5 class="card-header bg-primary text-white"><?= $taks['name'] ?></h5>
                             <form action="">
                                 <div class="card-body">
-                                    <p class="card-text">
+                                    <p class="card-text mb-4">
                                         <?= $taks['description'] ?>
                                     </p>
+
+                                    <div class="mb-2">
+                                        <small>Priority : </small>
+                                        <small>
+                                            <?php if ($taks['priority'] == 1) : ?>
+                                                <span class="badge bg-danger">Very High</span>
+                                            <?php elseif ($taks['priority'] == 2) : ?>
+                                                <span class="badge bg-warning">High</span>
+                                            <?php elseif ($taks['priority'] == 3) : ?>
+                                                <span class="badge bg-dark">Medium</span>
+                                            <?php else : ?>
+                                                <span class="badge bg-info">Low</span>
+                                            <?php endif; ?>
+                                        </small>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                        <small class="text-muted d-flex flex-column">
+                                            <span>Created at</span>
+                                            <?= $taks['created_at'] ?>
+                                        </small>
+                                        <small class="text-muted d-flex flex-column">
+                                            <span>Updated at</span>
+                                            <?= $taks['updated_at'] ?>
+                                        </small>
+                                    </div>
+
                                     <div class="d-flex justify-content-end gap-2">
                                         <?php if ($taks['is_finished'] == 1) : ?>
-                                            <button class="btn btn-success" type="button" id="finishedTaksBtn" data-bs-toggle="modal" data-bs-target="#finishedTaks" data-id="<?= $taks['id'] ?>">Finished</button>
+                                            <button class="btn btn-success " type="button" id="finishedTaksBtn" data-bs-toggle="modal" data-bs-target="#finishedTaks" data-id="<?= $taks['id'] ?>" disabled>Finished</button>
                                         <?php else : ?>
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateTaks" data-id="<?= $taks['id'] ?>">
                                                 Edit
@@ -38,7 +64,7 @@
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
-                <div class="text-muted">
+                <div class="text-muted vh-100">
                     <h1>No Record Found</h1>
                 </div>
             <?php endif; ?>
