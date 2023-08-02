@@ -96,7 +96,7 @@ Berikut adalah struktur database dari aplikasi todo list ini:
     | id | int | No | Primary | None | Auto Increment |
     | name | varchar(250) | No | None | None | None |
     | description | varchar(250) | No | None | None | None |
-    | user_id | int | No | None | None | None |
+    | user_id | int | No | Foreign | None | None |
     | created_at | timestamp | No | None | CURRENT_TIMESTAMP | None |
     | update_at | timestamp | No | None | CURRENT_TIMESTAMP | None |
 
@@ -108,7 +108,7 @@ Berikut adalah struktur database dari aplikasi todo list ini:
     | description | varchar(250) | No | None | None | None |
     | priority | int | No | None | None | None |
     | is_finished | int | No | None | None | None |
-    | activity_id | int | No | None | None | None |
+    | activity_id | int | No | Foreign | None | None |
     | created_at | timestamp | No | None | CURRENT_TIMESTAMP | None |
     | update_at | timestamp | No | None | CURRENT_TIMESTAMP | None |
 
@@ -116,13 +116,13 @@ Berikut adalah struktur database dari aplikasi todo list ini:
 Berikut adalah tampilan dari aplikasi todo list ini:
 1. Landing Page
 ![Landing Page](https://i.postimg.cc/RhxgdXCF/landing-page.jpg)
-2. Sign Up
+1. Sign Up
 ![Sign Up](https://i.postimg.cc/J46b4pwk/signup.jpg)
-3. Sign In
+1. Sign In
 [![signin.jpg](https://i.postimg.cc/j54fVXQC/signin.jpg)](https://postimg.cc/JDt0ZjFW)
-4. Activity
+1. Activity
 [![activity.jpg](https://i.postimg.cc/Fzn7mnfF/activity.jpg)](https://postimg.cc/PvYtQyz0)
-5. Taks
+1. Taks
 [![taks.jpg](https://i.postimg.cc/HkMVDzTH/taks.jpg)](https://postimg.cc/YvppQ14y)
 
 ## Author
