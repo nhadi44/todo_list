@@ -15,7 +15,6 @@
                         <?php endif; ?>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Change Password</a></li>
                         <li><a class="dropdown-item" href="<?= PATH ?>/signin/logout">Logout</a></li>
                     </ul>
                 </li>
